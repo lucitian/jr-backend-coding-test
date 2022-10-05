@@ -19,7 +19,13 @@
             </thead>
             <tbody>
                 @foreach($products as $product)
-                    <td>{{$product}}</td>
+                    <tr>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->description}}</td>
+                        <td>{{$product->price}}</td>
+                        <td>{{$product->created_at}}</td>
+                        <td>{{$product->updated_at}}</td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
