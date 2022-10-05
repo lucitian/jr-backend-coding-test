@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Open-Sans';
+    src: url(assets/fonts/OpenSans-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: 'Open-Sans', monospace;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #cae9ea;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5em 1fr;
+}
+
+ul li {
+    list-style: none;
+    font-size: 18px;
+}
+
+ul li a {
+    cursor: pointer;
+}
