@@ -6,10 +6,11 @@
         </ul>
     </div>
     <div class="container_items">
-        @unless(count($products) === 0)
+        @if(count($products) > 0)
         <table id="products_table">
             <thead>
                 <tr>
+                    <td>Actions</td>
                     <td>Product Name</td>
                     <td>Product Description</td>
                     <td>Product Price</td>
@@ -20,9 +21,10 @@
             <tbody>
                 @foreach($products as $product)
                     <tr>
+                        <td><input type="checkbox"></td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->description}}</td>
-                        <td>{{$product->price}}</td>
+                        <td>P{{$product->price}}</td>
                         <td>{{$product->created_at}}</td>
                         <td>{{$product->updated_at}}</td>
                     </tr>
@@ -31,6 +33,9 @@
         </table>
         @else
             <p>No products found</p>
-        @endunless
+        @endif
+    </div>
+    <div class="container_pagination">
+        {{ $products -> links('vendor.pagination.custom') }}
     </div>
 </main>
