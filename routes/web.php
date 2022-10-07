@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
@@ -16,6 +15,7 @@ use App\Models\Product;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/', [ProductController::class, 'index']);
+Route::get('/product/{id}', [ProductController::class, 'getProduct'])->name('product.product');
 
 Route::resource('', ProductController::class);

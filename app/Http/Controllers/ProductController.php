@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Http\Resources\v01\ProductResource;
-use App\Http\Resources\v01\ProductPagination;
 
 class ProductController extends Controller
 {
@@ -16,10 +14,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        //GET
         $products = Product::paginate(5);
 
-        return view('index', [
+        // return response()->json(['products' => $products], 200);
+        return view('content', [
             'products' => $products
         ]);
     }
@@ -41,9 +40,13 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function getProduct($id)
     {
-        //
-        return new ProductResource($id);
+        //GET specific product
+        $data = Product::find($id);
+
+        return view('product.product', [
+            'product' => $data
+        ]);
     }
 }

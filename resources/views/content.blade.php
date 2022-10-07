@@ -1,4 +1,7 @@
-<main id="container">
+@extends('layout')
+
+@section('content')
+<div id="container">
     <div class="container_options">
         <ul>
             <li><a>Add Product</a></li>
@@ -20,7 +23,7 @@
             </thead>
             <tbody>
                 @foreach($products as $product)
-                    <tr>
+                    <tr data-href="{{ route('product.product', [$product->id]) }}">
                         <td><input type="checkbox"></td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->description}}</td>
@@ -38,4 +41,6 @@
     <div class="container_pagination">
         {{ $products -> links('vendor.pagination.custom') }}
     </div>
-</main>
+</div>
+<script src='js/product.js'></script>
+@endsection
