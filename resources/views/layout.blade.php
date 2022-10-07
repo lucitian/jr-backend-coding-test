@@ -3,6 +3,7 @@
     <link href="/css/header.css" rel="stylesheet">
     <link href="/css/content.css" rel="stylesheet">
     <link href="/css/product.css" rel="stylesheet">
+    <link href="/css/store.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Shoptronics</title>
 </head>
@@ -10,7 +11,7 @@
     <header>
         <div class="navbar">
             <div class="navbar_title">
-                <a><h1>SHOPTRONICS</h1></a>
+                <a href="{{ route('index') }}"><h1>SHOPTRONICS</h1></a>
             </div>
             <div class="navbar_options">
                 <ul>
@@ -24,5 +25,7 @@
     </header>
     @yield('content')
     @yield('product')
+    @yield('store')
 </body>
+
 

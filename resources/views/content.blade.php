@@ -4,8 +4,8 @@
 <div id="container">
     <div class="container_options">
         <ul>
-            <li><a>Add Product</a></li>
-            <li><a>Remove Product</a></li>
+            <li><button id="modal_button">Add Product</button></li>
+            <li><button onclick="">Remove Product</button></li>
         </ul>
     </div>
     <div class="container_items">
@@ -42,5 +42,30 @@
         {{ $products -> links('vendor.pagination.custom') }}
     </div>
 </div>
+
+<div id="modal_container">
+    <form action="{{ route('modals.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="store_form">
+            <div class="store_input">
+                <h1>Add a new product</h1><br>
+                <label for="product_name">Product Name:</label>
+                <input type="text" name="product_name">
+                <label for="product_price">Product Price:</label>
+                <input type="text" name="product_price">
+                <label for="product_description">Product Description:</label>
+                <input type="text" name="product_description">
+            </div>
+            <div class="store_buttons">
+                <ul>
+                    <li><button id="store_submit" type="submit">Add Product</button></li>
+                    <li><button id="store_cancel">Cancel</button></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+
 <script src='js/product.js'></script>
+<script src='js/store.js'></script>
 @endsection

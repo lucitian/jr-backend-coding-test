@@ -24,6 +24,8 @@ ul li {
     font-size: 18px;
 }
 
-ul li a {
+a {
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }

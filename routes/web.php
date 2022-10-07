@@ -15,7 +15,8 @@ use App\Models\Product;
 |
 */
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'index'])->name('index');
 Route::get('/product/{id}', [ProductController::class, 'getProduct'])->name('product.product');
+Route::post('/store', [ProductController::class, 'storeProduct'])->name('modals.store');
 
 Route::resource('', ProductController::class);
