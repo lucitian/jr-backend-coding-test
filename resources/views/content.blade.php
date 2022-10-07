@@ -68,4 +68,9 @@
 
 <script src='js/product.js'></script>
 <script src='js/store.js'></script>
+@if(session()->has('alert'))
+<script>
+    alert("{{ session()->get('alert')}}");
+</script>
+@endif
 @endsection
