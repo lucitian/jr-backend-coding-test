@@ -28,3 +28,14 @@ A product needs to have the following information:
 
 ## Optional (for bonus points)
 - Say for example, we need a feature where we can display featured products. How would you go about implementing this feature? (You don't need to write code for this, just describe how would you implement it)
+
+---
+
+## Project Setup by the examinee
+- Follow the "Project Setup" instructions above
+- Create a table of products under the `backend_coding_test` schema
+- Run `php artisan migrate:fresh --seed` to create dummy data
+- Run `php artisan serve` to run the project
+
+## Answer for the optional question
+- In order to display feature products, there are several ways to do it. Adding a new column in the 'product' table, named 'featured' or 'trending'. Wherein if certain product's featured/trending is true, then that goes with the carousel, featured, or trending section. Another way is to consider the time that the product was created. And lastly, to take note of the sales that the product made.
